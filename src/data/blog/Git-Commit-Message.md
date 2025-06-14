@@ -2,7 +2,7 @@
 title: AngularJS Git Commit Message 规范
 author: Kai Zhou
 pubDatetime: 2025-06-14T20:20:00.00+08:00
-featured: false
+featured: true
 draft: false
 tags:
   - Git
@@ -126,6 +126,7 @@ Scope 可以是任何指定提交更改位置的标识。例如 **$location**、
 
 所有破坏性更改都必须在页脚中作为破坏性更改块提及，该块应以单词 BREAKING CHANGE: 开头，后跟空格或两个换行符。然后提交消息的其余部分是更改的描述、理由和迁移说明。
 
+```
 BREAKING CHANGE: isolate scope bindings definition has changed and  
     the inject option for the directive controller injection was removed.  
       
@@ -152,6 +153,7 @@ BREAKING CHANGE: isolate scope bindings definition has changed and
     }  
       
     The removed \`inject\` wasn't generaly useful for directives so there should be no code using it.
+```
 
 ### 9.2 **引用问题**
 
@@ -166,48 +168,53 @@ Closes \#123, \#245, \#992
 ## 10. **示例**
 
 ---
-
-**feat($browser): onUrlChange event (popstate/hashchange/polling)**
+```
+feat($browser): onUrlChange event (popstate/hashchange/polling)
 
 Added new event to $browser:  
 \- forward popstate event if available  
 \- forward hashchange event if popstate not available  
 \- do polling when neither popstate nor hashchange available
 
-**Breaks $browser.onHashChange, which was removed (use onUrlChange instead)**  
+Breaks $browser.onHashChange, which was removed (use onUrlChange instead)
+```
 ---
-
-**fix($compile): couple of unit tests for IE9**
+```
+fix($compile): couple of unit tests for IE9
 
 Older IEs serialize html uppercased, but IE9 does not...  
 Would be better to expect case insensitive, unfortunately jasmine does  
 not allow to user regexps for throw expectations.
 
-**Closes \#392**  
-**Breaks foo.bar api, foo.baz should be used instead**  
+Closes \#392
+Breaks foo.bar api, foo.baz should be used instead
+```
 ---
-
-**feat(directive): ng:disabled, ng:checked, ng:multiple, ng:readonly, ng:selected**
+```
+feat(directive): ng:disabled, ng:checked, ng:multiple, ng:readonly, ng:selected
 
 New directives for proper binding these attributes in older browsers (IE).  
 Added coresponding description, live examples and e2e tests.
 
-**Closes \#351**  
+Closes \#351
+```
 ---
-
-**style($location): add couple of missing semi colons**  
+```
+style($location): add couple of missing semi colons 
+```
 ---
-
-**docs(guide): updated fixed docs from Google Docs**
+```
+docs(guide): updated fixed docs from Google Docs
 
 Couple of typos fixed:  
 \- indentation  
 \- batchLogbatchLog \-\> batchLog  
 \- start periodic checking  
 \- missing brace  
+```
 ---
-
-**feat($compile): simplify isolate scope bindings**
+```
+feat($compile): simplify isolate scope bindings
 
 Changed the isolate scope binding options to:  
   \- @attr \- attribute binding (including interpolation)  
@@ -218,7 +225,7 @@ This change simplifies the terminology as well as
 number of choices available to the developer. It  
 also supports local name aliasing from the parent.
 
-**BREAKING CHANGE:** isolate scope bindings definition has changed and  
+BREAKING CHANGE: isolate scope bindings definition has changed and  
 the inject option for the directive controller injection was removed.
 
 To migrate the code follow the example below:
@@ -244,3 +251,4 @@ scope: {
 }
 
 The removed \`inject\` wasn't generaly useful for directives so there should be no code using it. 
+```
