@@ -8,7 +8,7 @@ tags:
   - LLM
   - GPT
   - AI
-description: 本文来自 OpenAI 的 Andrej Karpathy 在 Microsoft Build 2023 大会的分享，详细介绍了如何训练一个 GPT 助手以及如何有效地将这些助手应用到应用程序中。
+description: 本文来自 OpenAI 的 Andrej Karpathy 在 Microsoft Build 2023 大会的分享
 ---
 
 本文翻译了 Andrej Karpathy 在 Microsoft Build 2023 大会分享的第一部分内容。
