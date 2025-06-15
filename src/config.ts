@@ -1,18 +1,18 @@
 export const SITE = {
   website: "https://xiangkaik.top/", // replace this with your deployed domain
   author: "Kai Zhou",
-  profile: "https://satnaing.dev/",
+  profile: "https://xiangkaik.top/profile/",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
   title: "Blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
-  postPerPage: 4,
+  postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,
   showBackButton: true, // show back button in post detail
   editPost: {
-    enabled: true,
+    enabled: false,
     text: "Suggest Changes",
     url: "https://github.com/satnaing/astro-paper/edit/main/",
   },
