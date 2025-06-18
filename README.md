@@ -1,4 +1,4 @@
-# BLOG
+# BLOG 📄
 
 ## 🚀 Project Structure
 
