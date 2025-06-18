@@ -1,7 +1,7 @@
 export const SITE = {
   website: "https://xiangkaik.top/", // replace this with your deployed domain
   author: "Kai Zhou",
-  profile: "https://xiangkaik.top/profile/",
+  profile: "",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
   title: "Blog",
   ogImage: "astropaper-og.jpg",
@@ -14,7 +14,7 @@ export const SITE = {
   editPost: {
     enabled: true,
     text: "Suggest Changes",
-    url: "https://github.com/xiangkaik/xiangkaik.github.io/tree/main/",
+    url: "https://github.com/zkforge/zhoukai.me/tree/main/",
   },
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
