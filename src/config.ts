@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://xiangkaik.top/", // replace this with your deployed domain
   author: "Kai Zhou",
   profile: "",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  desc: "A blog about my life.",
   title: "Blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
