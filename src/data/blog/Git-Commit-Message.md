@@ -22,22 +22,28 @@ description: 本文为 AngularJS Git Commit Message 规范的中文翻译
 
 ## 2. **生成 CHANGELOG.md**
 
-我们在 changelog 中使用这三个部分：**新功能**、**bug 修复**、**破坏性更改**。  
+我们在 changelog 中使用这三个部分：**Features**、**Bug Fixes**、**BREAKING CHANGES**。  
 这个列表可以在发布时通过脚本生成，同时包含相关提交的链接。  
 当然，你可以在实际发布前编辑这个变更日志，但它可以生成基本框架。
 
-自上次发布以来的所有主题（提交信息的第一行）列表：  
-\>\> git log \<last tag\> HEAD \--pretty=format:%s
+自上次发布以来的所有变动（提交信息的第一行）列表：  
+```
+git log \<last tag\> HEAD \--pretty=format:%s
+```
 
 本次发布的新功能：  
-\>\> git log \<last release\> HEAD \--grep feature
+```
+git log \<last release\> HEAD \--grep feature
+```
 
 ## 3. **识别不重要的提交**
 
 这些是格式化更改（添加/删除空格/空行、缩进）、缺少分号、注释等。所以当你在寻找某些更改时，可以忽略这些提交 - 这些提交中没有逻辑更改。
 
 在 bisect 时，你可以通过以下方式忽略这些提交：  
-\>\> git bisect skip $(git rev-list \--grep irrelevant \<good place\> HEAD)
+```
+git bisect skip $(git rev-list \--grep irrelevant \<good place\> HEAD)
+```
 
 ## 4. **在浏览历史时提供更多信息**
 
@@ -69,9 +75,9 @@ description: 本文为 AngularJS Git Commit Message 规范的中文翻译
 ## 5. **提交信息的格式**
 
 **\<type\>(\<scope\>): \<subject\>**  
-**\<BLANK LINE\>**  
+**\<空一行\>**  
 **\<body\>**  
-**\<BLANK LINE\>**  
+**\<空一行\>**  
 **\<footer\>**
 
 提交信息的任何一行都不能超过 **100 个字符**！这使得消息在 github 和各种 git 工具中更容易阅读。
@@ -80,7 +86,7 @@ description: 本文为 AngularJS Git Commit Message 规范的中文翻译
 
 ## 6. **回退提交**
 
-如果提交回退了之前的提交，其头部应该以 `**revert:** ` 开头，后跟被回退提交的头部。在正文中应该说明：`This reverts commit <hash>.`，其中 hash 是被回退提交的 SHA。
+如果提交回退了之前的提交，其头部应该以 `revert:` 开头，后跟被回退提交的头部。在正文中应该说明：`This reverts commit <hash>.`，其中 hash 是被回退提交的 SHA。
 
 ## 7. **消息头部**
 
@@ -90,19 +96,19 @@ description: 本文为 AngularJS Git Commit Message 规范的中文翻译
 
 这描述了此提交提供的更改类型。
 
-* **feat** (feature)  
-* **fix** (bug fix)  
-* **docs** (documentation)  
-* **style** (formatting, missing semi colons, …)  
-* **refactor**  
-* **test** (when adding missing tests)  
-* **chore** (maintain)
+* **feat** (feature：新功能)  
+* **fix** (bug fix：修补bug)  
+* **docs** (documentation：文档)  
+* **style** (formatting, missing semi colons, …：格式)  
+* **refactor** (重构：既不是新增功能，也不是修改bug的代码变动)
+* **test** (when adding missing tests：增加测试)  
+* **chore** (maintain：构建过程或辅助工具的变动)
 
 ### 7.2 **允许的 scope**
 
 Scope 可以是任何指定提交更改位置的标识。例如 **$location**、**$browser**、**$compile**、**$rootScope**、**ngHref**、**ngClick**、**ngView** 等...
 
-如果没有更合适的 scope，可以使用 **\***。
+如果没有更合适的 scope，可以使用 `*`。
 
 ### 7.3 **subject 文本**
 
