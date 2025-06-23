@@ -1,5 +1,5 @@
 ---
-title: 如何训练一个 GPT 助手
+title: 如何训练一个GPT助手
 author: Kai Zhou
 pubDatetime: 2025-06-14T15:20:00.00+08:00
 featured: true

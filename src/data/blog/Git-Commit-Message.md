@@ -1,5 +1,5 @@
 ---
-title: Git Commit Message 开发规范
+title: Git Commit Message开发规范
 author: Kai Zhou
 pubDatetime: 2025-06-14T20:20:00.00+08:00
 featured: true
@@ -7,7 +7,7 @@ draft: false
 tags:
   - Git
   - 开发规范
-description: 本文为 AngularJS Git Commit Message 规范的中文翻译
+description: 本文为 AngularJS Git Commit Message规范的中文翻译
 ---
 
 **AngularJS Git Commit Message 规范**
