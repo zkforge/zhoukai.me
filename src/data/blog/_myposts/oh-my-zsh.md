@@ -2,7 +2,7 @@
 title: Mac 终端美化及插件安装
 author: Kai Zhou
 pubDatetime: 2025-05-22T20:20:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - 终端美化

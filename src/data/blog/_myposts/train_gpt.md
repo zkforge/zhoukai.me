@@ -2,7 +2,7 @@
 title: 如何训练一个 GPT 助手
 author: Kai Zhou
 pubDatetime: 2024-01-14T15:20:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - LLM
