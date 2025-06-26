@@ -2,7 +2,7 @@
 title: " MCP 是什么？"
 author: Kai Zhou
 pubDatetime: 2025-06-24T10:00:00.00+08:00
-featured: flase
+featured: false
 draft: false
 tags:
   - LLM
