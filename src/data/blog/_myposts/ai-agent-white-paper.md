@@ -1,14 +1,14 @@
 ---
-title: AI Agent 白皮书（Google）
+title: AI Agent 白皮书（Google）中文翻译
 author: Kai Zhou
-pubDatetime: 2025-05-20T10:00:00.00+08:00
+pubDatetime: 2025-04-20T10:00:00.00+08:00
 featured: true
 draft: false
 tags:
   - LLM
   - Agent
   - AI
-description: 本文为AI Agent 白皮书（Google）的中文翻译
+description: 本文为 AI Agent 白皮书（Google）的中文翻译
 ---
 
 ## Table of contents

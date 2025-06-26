@@ -1,5 +1,5 @@
 ---
-title: "MCP是什么？"
+title: " MCP 是什么？"
 author: Kai Zhou
 pubDatetime: 2025-06-24T10:00:00.00+08:00
 featured: true

@@ -1,7 +1,7 @@
 ---
 title: "大语言模型综述：GPT、LLaMA 和 PaLM 模型的发展"
 author: Kai Zhou
-pubDatetime: 2025-06-23T16:00:00.00+08:00
+pubDatetime: 2025-05-28T16:00:00.00+08:00
 featured: true
 draft: false
 tags:
@@ -10,7 +10,7 @@ tags:
   - AI
 description: "本文为论文《Large language models: a survey》的阅读笔记。"
 ---
-本文是对论文《Large language models: a survey》的阅读笔记和个人理解。这篇综述详细回顾了一些最具代表性的大语言模型，包括三个流行的大语言模型家族（GPT、LLaMA、PaLM），讨论了它们的特点、贡献和局限性，并概述了用于构建和增强大语言模型的相关技术。
+> 本文是对论文《Large language models: a survey》的阅读笔记和个人理解。这篇综述详细回顾了一些最具代表性的大语言模型，包括三个流行的大语言模型家族（GPT、LLaMA、PaLM），讨论了它们的特点、贡献和局限性，并概述了用于构建和增强大语言模型的相关技术。
 
 
 ## Table of contents

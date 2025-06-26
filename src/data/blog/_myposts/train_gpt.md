@@ -1,7 +1,7 @@
 ---
-title: 如何训练一个GPT助手
+title: 如何训练一个 GPT 助手
 author: Kai Zhou
-pubDatetime: 2025-06-14T15:20:00.00+08:00
+pubDatetime: 2024-01-14T15:20:00.00+08:00
 featured: true
 draft: false
 tags:
@@ -11,7 +11,7 @@ tags:
 description: 本文来自 OpenAI 的 Andrej Karpathy 在 Microsoft Build 2023 大会的分享
 ---
 
-本文翻译了 Andrej Karpathy 在 Microsoft Build 2023 大会分享的第一部分内容。
+> 本文翻译了 Andrej Karpathy 在 Microsoft Build 2023 大会分享的第一部分内容。
 
 ## Table of contents
 

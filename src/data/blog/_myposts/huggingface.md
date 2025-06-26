@@ -1,7 +1,7 @@
 ---
 title: "Hugging Face 国内镜像源配置指南"
 author: Kai Zhou
-pubDatetime: 2025-03-14T20:10:00.00+08:00
+pubDatetime: 2024-05-14T20:10:00.00+08:00
 featured: true
 draft: false
 tags:
@@ -9,7 +9,7 @@ tags:
   - Hugging Face
   - 镜像源
   - 配置
-description: "详细介绍如何配置Hugging Face的国内镜像源，包括CLI工具安装、环境变量设置、源码修改等多种方法"
+description: "详细介绍如何配置 Hugging Face 的国内镜像源，包括CLI工具安装、环境变量设置、源码修改等多种方法"
 ---
 
 > Hugging Face 国内镜像源配置指南
