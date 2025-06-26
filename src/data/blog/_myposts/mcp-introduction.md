@@ -11,8 +11,6 @@ tags:
 description: 本文简单介绍了 MCP (Model Context Protocol)
 ---
 
-## Table of contents
-
 ## 什么是 MCP？
 
 MCP 是一个开放协议，用于标准化应用程序如何向 LLM 提供上下文。将 MCP 想象成 AI 应用程序的 USB-C 接口。就像 USB-C 提供了一种标准化的方式来连接你的设备到各种外设和配件一样，MCP 提供了一种标准化的方式来连接 AI 模型到不同的数据源和工具。
