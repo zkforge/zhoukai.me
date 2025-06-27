@@ -1,5 +1,5 @@
 ---
-title: "AI专业研究生必备的Linux命令指南"
+title: "AI 专业研究生必备的 Linux 命令指南"
 author: Kai Zhou
 pubDatetime: 2025-06-26T10:00:00.00+08:00
 featured: true
