@@ -10,9 +10,9 @@ tags:
 description: 本文为 AngularJS Git Commit Message 规范的中文翻译
 ---
 
-**AngularJS Git Commit Message 规范**
+> AngularJS Git Commit Message 规范
 
-## Table of contents
+## 目录
 
 ## 1. **目标**
 

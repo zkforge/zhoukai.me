@@ -14,9 +14,9 @@ description: "为人工智能专业研究生整理的Linux命令指南，涵盖�
 
 > 作为AI专业的研究生，熟练掌握Linux命令行是必备技能。本文整理了从基础到进阶的Linux命令。
 
-## Table of contents
+## 目录
 
-## 基础文件操作
+## 1. 基础文件操作
 
 ### 文件浏览与导航
 
@@ -90,7 +90,7 @@ grep -n "search_term" filename
 grep -E "pattern" filename
 ```
 
-## 文本处理与分析
+## 2. 文本处理与分析
 
 ### 文本处理工具
 
@@ -136,7 +136,7 @@ file filename
 file -i filename
 ```
 
-## 进程管理与监控
+## 3. 进程管理与监控
 
 ### 进程查看
 
@@ -190,7 +190,7 @@ fg %job_number
 bg %job_number
 ```
 
-## 网络工具
+## 4. 网络工具
 
 ### 网络连接测试
 
@@ -226,7 +226,7 @@ rsync -avz source/ destination/
 rsync -avz --delete source/ destination/  # 删除目标中源没有的文件
 ```
 
-## 开发环境配置
+## 5. 开发环境配置
 
 ### 包管理
 
@@ -301,7 +301,7 @@ git pull origin branch_name
 git push origin branch_name
 ```
 
-## AI开发相关工具
+## 6. AI开发相关工具
 
 ### GPU监控
 
@@ -359,7 +359,7 @@ echo 'export VARIABLE_NAME=value' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## 系统监控与性能分析
+## 7. 系统监控与性能分析
 
 ### 系统资源监控
 
@@ -402,7 +402,7 @@ journalctl -n 100
 journalctl --since "2024-01-01" --until "2024-01-02"
 ```
 
-## 实用技巧
+## 8. 实用技巧
 
 ### 别名设置
 
@@ -481,7 +481,7 @@ else
 fi
 ```
 
-## 总结
+## 9. 总结
 
 掌握这些Linux命令将大大提高你在AI研究中的工作效率。建议：
 
@@ -492,7 +492,7 @@ fi
 
 记住，命令行虽然初期学习曲线较陡，但一旦掌握，将大大提升你的开发和研究效率。在AI领域，很多工具和框架都优先支持命令行操作，熟练掌握Linux命令是成为优秀AI研究者的重要基础。
 
-## 推荐资源
+## 10. 推荐资源
 
 - [Linux命令大全](https://www.runoob.com/linux/linux-command-manual.html)
 - [Bash脚本教程](https://www.runoob.com/linux/linux-shell.html)

@@ -11,7 +11,7 @@ tags:
 description: 本文为 AI Agent 白皮书（Google）的中文翻译
 ---
 
-## Table of contents
+## 目录
 
 ## Introduction
 

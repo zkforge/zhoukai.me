@@ -13,7 +13,7 @@ description: 本文来自 OpenAI 的 Andrej Karpathy 在 Microsoft Build 2023 �
 
 > 本文翻译了 Andrej Karpathy 在 Microsoft Build 2023 大会分享的第一部分内容。
 
-## Table of contents
+## 目录
 
 ## 1. 引言
 
