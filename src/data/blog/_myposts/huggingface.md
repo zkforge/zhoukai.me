@@ -16,7 +16,7 @@ description: "详细介绍如何配置 Hugging Face 的国内镜像源，包括C
 
 ## 目录
 
-## 方法一：安装 CLI 工具并设置环境变量
+## 方法一：安装 CLI 工具并设置环境变量（推荐-简单）
 
 ### 1. 安装 huggingface_hub
 
@@ -40,7 +40,7 @@ huggingface-cli download \
     --cache-dir /root/autodl-tmp/deberta_cache
 ```
 
-## 方法二：修改源码配置
+## 方法二：修改源码配置（推荐-较麻烦）
 
 ### 修改 constants.py 文件
 
