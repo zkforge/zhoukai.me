@@ -30,6 +30,10 @@ pip install -U huggingface_hub
 export HF_ENDPOINT=https://hf-mirror.com
 ```
 
+```bash
+export HF_HOME="模型，数据集保存路径"
+```
+
 ### 3. 下载模型示例
 
 ```bash
