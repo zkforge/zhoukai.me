@@ -15,44 +15,70 @@ title: "Resume"
             box-sizing: border-box;
         }
 
+        :root {
+            --color-primary: #356fa1;
+            --color-secondary: #2d5d8a;
+            --color-accent: #356fa1;
+            --color-success: #28a745;
+            --color-warning: #ffc107;
+            --color-error: #dc3545;
+            --color-background: #f5f5f5;
+            --color-card-bg: #ffffff;
+            --color-text-primary: #333333;
+            --color-text-secondary: #666666;
+            --color-text-accent: #666666;
+            --color-link: #356fa1;
+            --border-radius: 15px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
+            line-height: 1.75;
+            color: var(--color-text-primary);
+            background: var(--color-background);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding: 40px 20px;
+            padding: 50px 20px;
             margin: 0;
         }
 
         .container {
             width: 100%;
-            max-width: 700px;
-            background: #fff;
+            max-width: 800px;
+            background: var(--color-card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 40px 45px;
+            transition: var(--transition);
+        }
+
+        .container:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         /* 头部样式 */
         .header {
             text-align: center;
             margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
         }
 
         .name {
             font-size: 32px;
             font-weight: bold;
             margin-bottom: 10px;
-            color: #000;
+            color: var(--color-text-primary);
         }
 
         .title {
             font-size: 18px;
-            color: #666;
+            color: var(--color-text-secondary);
             margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .contact {
@@ -64,15 +90,18 @@ title: "Resume"
         }
 
         .contact span {
-            color: #666;
+            color: var(--color-text-secondary);
         }
 
         .contact a {
-            color: #2563eb;
+            color: var(--color-link);
             text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
         }
 
         .contact a:hover {
+            color: var(--color-primary);
             text-decoration: underline;
         }
 
@@ -84,30 +113,28 @@ title: "Resume"
         .section-title {
             font-size: 20px;
             font-weight: bold;
-            color: #000;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #000;
-            padding-bottom: 5px;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
         }
 
         .subsection {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .subsection-title {
             font-size: 16px;
             font-weight: bold;
-            color: #000;
+            color: var(--color-text-primary);
             margin-bottom: 8px;
         }
 
         .company {
-            color: #2563eb;
-            font-weight: normal;
+            color: var(--color-text-secondary);
+            font-weight: 500;
         }
 
         .duration {
-            color: #666;
+            color: var(--color-text-secondary);
             font-size: 14px;
             margin-left: 10px;
         }
@@ -123,17 +150,18 @@ title: "Resume"
 
         li {
             position: relative;
-            padding-left: 15px;
-            margin-bottom: 6px;
+            padding-left: 20px;
+            margin-bottom: 8px;
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         li:before {
-            content: "•";
+            content: "▶";
             position: absolute;
             left: 0;
-            color: #666;
+            color: var(--color-text-secondary);
+            font-size: 12px;
         }
 
         /* 技能样式 */
@@ -144,14 +172,14 @@ title: "Resume"
         }
 
         .skill-category {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .skill-category h4 {
             font-size: 14px;
             font-weight: bold;
-            color: #000;
-            margin-bottom: 8px;
+            color: var(--color-text-primary);
+            margin-bottom: 10px;
         }
 
         .skill-list {
@@ -161,41 +189,45 @@ title: "Resume"
         }
 
         .skill-tag {
-            background: #f5f5f5;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            color: #666;
+            background: none;
+            color: var(--color-text-secondary);
+            padding: 2px 0;
+            font-size: 13px;
+            font-weight: 500;
         }
 
         /* 教育样式 */
         .education-item {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
 
         .degree {
             font-weight: bold;
-            color: #000;
+            color: var(--color-text-primary);
+            font-size: 16px;
         }
 
         .university {
-            color: #2563eb;
+            color: var(--color-text-secondary);
+            font-weight: 500;
         }
 
         .education-duration {
-            color: #666;
+            color: var(--color-text-secondary);
             font-size: 14px;
+            margin-top: 5px;
         }
 
         /* 项目样式 */
         .project-title {
             font-weight: bold;
-            color: #000;
+            color: var(--color-text-primary);
             margin-bottom: 5px;
+            font-size: 16px;
         }
 
         .project-tech {
-            color: #666;
+            color: var(--color-text-secondary);
             font-size: 13px;
             font-style: italic;
             margin-bottom: 8px;
@@ -205,16 +237,71 @@ title: "Resume"
         .language-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
         .language-name {
             font-weight: bold;
-            color: #000;
+            color: var(--color-text-primary);
         }
 
         .language-level {
-            color: #666;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+
+        /* 返回按钮样式 */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--color-card-bg);
+            color: var(--color-primary);
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(53, 111, 161, 0.3);
+        }
+
+        .back-button svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* 调整容器样式为返回按钮留出空间 */
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--color-card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 40px 45px;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        /* 底部样式 */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 12px;
         }
 
         /* 响应式设计 */
@@ -225,9 +312,23 @@ title: "Resume"
 
             .container {
                 max-width: 100%;
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 60px;
             }
 
-            .name {
+            .back-button {
+                top: 10px;
+                left: 10px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .back-button svg {
+                width: 14px;
+                height: 14px;
+            }
+                  .name {
                 font-size: 28px;
             }
 
@@ -253,89 +354,123 @@ title: "Resume"
         /* 打印样式 */
         @media print {
             body {
-                display: block;
+                background: white;
                 padding: 20px;
                 margin: 0;
+            }
+
+            /* 隐藏返回按钮 */
+            .back-button {
+                display: none;
             }
 
             .container {
                 max-width: none;
                 width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 20px;
             }
 
             .header {
                 margin-bottom: 30px;
+                border-bottom-color: #000;
             }
 
             .section {
                 page-break-inside: avoid;
             }
 
+            .section-title {
+                color: #000;
+                border-bottom-color: #000;
+            }
+
+            .section-title::after {
+                background: #000;
+            }
+
             a {
                 text-decoration: none;
+                color: #000;
+            }
+
+            .name {
+                color: #000;
+            }
+
+            .company, .university {
                 color: #000;
             }
         }
     </style>
 </head>
 <body>
+    <!-- 返回主页按钮 -->
+    <a href="/" class="back-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        返回博客
+    </a>
+
     <div class="container">
         <!-- 头部信息 -->
-        <div class="header">
-            <div class="name">周凯 Kai Zhou</div>
-            <div class="title">在校研究生 Graduate Student</div>
-            <div class="contact">
+        <header class="header">
+            <h1 class="name">周凯 Kai Zhou</h1>
+            <p class="title">在校研究生 Graduate Student</p>
+            <nav class="contact">
                 <span>📧 <a href="mailto:kaizhou0305@gmail.com">kaizhou0305@gmail.com</a></span>
                 <span>📱 +86 15995397689</span>
                 <span>🔗 <a href="https://github.com/zkforge" target="_blank">GitHub</a></span>
                 <span>🔗 <a href="https://linkedin.com/in/xiangkaik" target="_blank">LinkedIn</a></span>
-            </div>
-        </div>
+            </nav>
+        </header>
 
         <!-- 个人简介 -->
-        <div class="section">
-            <div class="section-title">个人简介 About</div>
+        <section class="section">
+            <h2 class="section-title">个人简介 About</h2>
             <div class="content">
                 <p>吉林大学人工智能专业在读研究生，对机器学习、深度学习和自然语言处理有浓厚兴趣。具备扎实的数据科学基础，熟悉常用的AI框架和工具。积极参与学术研究和技术实践，致力于将理论知识应用于解决实际问题。</p>
                 <p>Graduate student majoring in Artificial Intelligence at Jilin University, with strong interests in machine learning, deep learning, and natural language processing. Possesses solid foundation in data science, familiar with common AI frameworks and tools. Actively involved in academic research and technical practice, committed to applying theoretical knowledge to solve practical problems.</p>
             </div>
-        </div>
+        </section>
 
         <!-- 教育背景 -->
-        <div class="section">
-            <div class="section-title">教育背景 Education</div>
+        <section class="section">
+            <h2 class="section-title">教育背景 Education</h2>
 
-            <div class="education-item">
-                <div class="degree">人工智能 硕士学位 M.S. in Artificial Intelligence</div>
-                <div class="university">吉林大学 Jilin University</div>
-                <div class="education-duration">2025.09 - 2027.06 (预计 Expected)</div>
+            <article class="education-item">
+                <h3 class="degree">人工智能 硕士学位 M.S. in Artificial Intelligence</h3>
+                <p class="university">吉林大学 Jilin University</p>
+                <p class="education-duration">2025.09 - 2027.06 (预计 Expected)</p>
                 <div class="content">
                     <ul>
                         <li>研究方向：机器学习、深度学习、自然语言处理</li>
                         <li>相关课程：高级机器学习、深度学习理论、计算机视觉、自然语言处理</li>
                     </ul>
                 </div>
-            </div>
+            </article>
 
-            <div class="education-item">
-                <div class="degree">数据科学与大数据技术 学士学位 B.S. in Data Science and Big Data Technology</div>
-                <div class="university">南京信息工程大学 Nanjing University of Information Science and Technology</div>
-                <div class="education-duration">2021.09 - 2024.06</div>
+            <article class="education-item">
+                <h3 class="degree">数据科学与大数据技术 学士学位 B.S. in Data Science and Big Data Technology</h3>
+                <p class="university">南京信息工程大学 Nanjing University of Information Science and Technology</p>
+                <p class="education-duration">2021.09 - 2024.06</p>
                 <div class="content">
                     <ul>
                         <li>主修课程：数据结构与算法、数据库原理、机器学习、大数据处理技术</li>
                         <li>技能培养：Python编程、统计分析、数据挖掘、深度学习基础</li>
                     </ul>
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
 
         <!-- 技术技能 -->
-        <div class="section">
-            <div class="section-title">技术技能 Technical Skills</div>
+        <section class="section">
+            <h2 class="section-title">技术技能 Technical Skills</h2>
 
             <div class="skills-grid">
-                <div class="skill-category">
+                <article class="skill-category">
                     <h4>编程语言 Programming Languages</h4>
                     <div class="skill-list">
                         <span class="skill-tag">Python</span>
@@ -344,9 +479,9 @@ title: "Resume"
                         <span class="skill-tag">Java</span>
                         <span class="skill-tag">C++</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="skill-category">
+                <article class="skill-category">
                     <h4>机器学习/深度学习 ML/DL</h4>
                     <div class="skill-list">
                         <span class="skill-tag">TensorFlow</span>
@@ -355,9 +490,9 @@ title: "Resume"
                         <span class="skill-tag">Keras</span>
                         <span class="skill-tag">OpenCV</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="skill-category">
+                <article class="skill-category">
                     <h4>数据处理 Data Processing</h4>
                     <div class="skill-list">
                         <span class="skill-tag">Pandas</span>
@@ -367,9 +502,9 @@ title: "Resume"
                         <span class="skill-tag">Spark</span>
                         <span class="skill-tag">Hadoop</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="skill-category">
+                <article class="skill-category">
                     <h4>AI/ML 工具 AI/ML Tools</h4>
                     <div class="skill-list">
                         <span class="skill-tag">Jupyter Notebook</span>
@@ -379,9 +514,9 @@ title: "Resume"
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Git</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="skill-category">
+                <article class="skill-category">
                     <h4>自然语言处理 NLP</h4>
                     <div class="skill-list">
                         <span class="skill-tag">NLTK</span>
@@ -390,9 +525,9 @@ title: "Resume"
                         <span class="skill-tag">BERT</span>
                         <span class="skill-tag">GPT</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="skill-category">
+                <article class="skill-category">
                     <h4>云计算平台 Cloud Platforms</h4>
                     <div class="skill-list">
                         <span class="skill-tag">AWS</span>
@@ -400,29 +535,29 @@ title: "Resume"
                         <span class="skill-tag">Azure</span>
                         <span class="skill-tag">Linux</span>
                     </div>
-                </div>
+                </article>
             </div>
-        </div>
+        </section>
 
         <!-- 语言能力 -->
-        <div class="section">
-            <div class="section-title">语言能力 Languages</div>
+        <section class="section">
+            <h2 class="section-title">语言能力 Languages</h2>
             <div class="content">
-                <div class="language-item">
+                <article class="language-item">
                     <span class="language-name">中文 Chinese</span>
                     <span class="language-level">母语 Native</span>
-                </div>
-                <div class="language-item">
+                </article>
+                <article class="language-item">
                     <span class="language-name">英语 English</span>
                     <span class="language-level">大学英语四级/六级 CET-4/CET-6</span>
-                </div>
+                </article>
             </div>
-        </div>
+        </section>
 
-        <!-- 最后更新 -->
-        <div style="text-align: center; margin-top: 40px; color: #999; font-size: 12px;">
+        <!-- 底部 -->
+        <footer class="footer">
             最后更新 Last Updated: 2024年10月 October 2024
-        </div>
+        </footer>
     </div>
 </body>
 </html>
