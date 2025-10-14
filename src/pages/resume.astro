@@ -422,8 +422,9 @@ title: "Resume"
             <nav class="contact">
                 <span>📧 <a href="mailto:kaizhou0305@gmail.com">kaizhou0305@gmail.com</a></span>
                 <span>📱 +86 15995397689</span>
+                <span>💬 微信：zk471104594</span>
+                <span>🌐 <a href="https://xiangkaik.top" target="_blank">Blog</a></span>
                 <span>🔗 <a href="https://github.com/zkforge" target="_blank">GitHub</a></span>
-                <span>🔗 <a href="https://linkedin.com/in/kaizhou0305" target="_blank">LinkedIn</a></span>
             </nav>
         </header>
 
@@ -443,7 +444,7 @@ title: "Resume"
             <article class="education-item">
                 <h3 class="degree">人工智能 硕士学位 M.S. in Artificial Intelligence</h3>
                 <p class="university">吉林大学 Jilin University</p>
-                <p class="education-duration">2025.09 - 2027.06 (预计 Expected)</p>
+                <p class="education-duration">2025.09 - 2028.07</p>
                 <div class="content">
                     <ul>
                         <li>研究方向：机器学习、深度学习、自然语言处理</li>
@@ -455,12 +456,50 @@ title: "Resume"
             <article class="education-item">
                 <h3 class="degree">数据科学与大数据技术 学士学位 B.S. in Data Science and Big Data Technology</h3>
                 <p class="university">南京信息工程大学 Nanjing University of Information Science and Technology</p>
-                <p class="education-duration">2021.09 - 2024.06</p>
+                <p class="education-duration">2021.09 - 2025.07</p>
                 <div class="content">
                     <ul>
+                        <li>GPA: 3.4（专业前25%）</li>
+                        <li>荣誉：校优秀学生干部，国家励志奖学金，校奖学金等</li>
                         <li>主修课程：数据结构与算法、数据库原理、机器学习、大数据处理技术</li>
                         <li>技能培养：Python编程、统计分析、数据挖掘、深度学习基础</li>
                     </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- 项目经历 -->
+        <section class="section">
+            <h2 class="section-title">项目经历 Project Experience</h2>
+
+            <article class="subsection">
+                <h3 class="subsection-title">ChatGPT 风格对话助手微调项目 ChatGPT-Style Dialogue Assistant Fine-tuning Project</h3>
+                <div class="content">
+                    <ul>
+                        <li>独立实现完整RLHF训练流程，涵盖监督微调（SFT）、奖励模型训练（RM）及强化学习微调（PPO）</li>
+                        <li>使用开源中文语言模型 Qwen3-7B，在自构建的中英文对话数据集上进行微调优化</li>
+                        <li>采用 LoRA 轻量参数高效调参方案，提升模型在指令理解、语义连贯性和人类偏好响应上的表现</li>
+                        <li>使用 HuggingFace TRL 库构建 PPO 策略优化流程，基于奖励模型对模型生成质量进行打分训练</li>
+                        <li>项目模块化程度高，具备可扩展性，可适配多种中文开源模型并接入在线部署流程</li>
+                        <li>构建了包含 2k+ 条 prompt-response 样本的对话数据集，覆盖闲聊、问答、任务型指令</li>
+                        <li>对比训练前后模型输出效果，并使用 GPT-4 进行自动偏好评估（可视化评分对比）</li>
+                        <li>项目支持部署至 API 接口或本地 Streamlit Demo，具备工程落地能力</li>
+                    </ul>
+                    <p class="project-tech">技术栈：Transformers、TRL (PPOTrainer)、PEFT、LoRA、Qwen、PyTorch、Datasets、RLHF、HuggingFace</p>
+                </div>
+            </article>
+
+            <article class="subsection">
+                <h3 class="subsection-title">企业知识问答Agent系统 Enterprise Knowledge Q&A Agent System</h3>
+                <div class="content">
+                    <ul>
+                        <li>独立设计并开发企业文档问答系统，支持上传 PDF，构建向量索引并调用大语言模型回答问题</li>
+                        <li>使用 LangChain 框架构建 Retrieval-Augmented Generation (RAG) 管线，采用 Qwen-7B-Chat 实现问答生成</li>
+                        <li>利用 FAISS 进行向量检索，结合 HuggingFace 中文嵌入模型优化搜索准确性</li>
+                        <li>搭建 FastAPI 接口服务及 Streamlit 前端，支持用户实时上传、提问、查看回答与引用来源</li>
+                        <li>项目结构清晰，便于扩展至多模态或多Agent问答系统，具备完整部署能力</li>
+                    </ul>
+                    <p class="project-tech">技术栈：LangChain、Qwen、FAISS、HuggingFace、PyMuPDF、Streamlit、FastAPI、Transformers</p>
                 </div>
             </article>
         </section>
@@ -478,6 +517,23 @@ title: "Resume"
                         <span class="skill-tag">SQL</span>
                         <span class="skill-tag">Java</span>
                         <span class="skill-tag">C++</span>
+                    </div>
+                </article>
+
+                <article class="skill-category">
+                    <h4>开发工具 Development Tools</h4>
+                    <div class="skill-list">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </article>
+
+                <article class="skill-category">
+                    <h4>证书 Certificates</h4>
+                    <div class="skill-list">
+                        <span class="skill-tag">大学英语四级 CET-4</span>
+                        <span class="skill-tag">大学英语六级 CET-6</span>
                     </div>
                 </article>
 
@@ -556,7 +612,7 @@ title: "Resume"
 
         <!-- 底部 -->
         <footer class="footer">
-            最后更新 Last Updated: 2024年10月 October 2024
+            最后更新 Last Updated: 2025年1月 January 2025
         </footer>
     </div>
 </body>
