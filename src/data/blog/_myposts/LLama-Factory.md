@@ -54,10 +54,8 @@ description: "在 Linux 系统上微调一个大模型、部署模型、暴露 A
 ###### 2.2 RLHF（Reinforcement Learning from Human Feedback）强化学习
 - DPO（Direct Preference Optimization）
 	核心思想：通过 **人类对比选择**（例如：A 选项和 B 选项，哪个更好）直接优化生成模型，使其产生更符合用户需求的结果；调整幅度大
-	![[Pasted image 20250224205057.png]]
 - PPO（Proximal Policy Optimization）
 	核心思想：通过 **奖励信号**（如点赞、点踩）来 **渐进式调整模型的行为策略**；调整幅度小
-	![[截屏2025-02-24 20.53.22.png]]
 ###### 2.3 RAG（Retrieval-Augmented Generation）检索增强生成
 - 将外部信息检索与文本生成结合，帮助模型在生成答案时，实时获取外部信息和最新信息
 ##### 3. 微调还是RAG?
@@ -74,11 +72,7 @@ description: "在 Linux 系统上微调一个大模型、部署模型、暴露 A
 ##### 4. SFT（有监督微调）
  通过提供**人工标注**的数据，进一步训练**预训练模型**，让模型能够更加精准地处理**特定领域**的任务
  - 人工标注的数据
-```
-如：分类系统
-{"image_path": "path/image1.jpg", "label": "SpongeBobSquarePants"}
-{"image_path": "path/image2.jpg", "label": "PatrickStar"}
-```
+
 ```
 如：对话系统
 {
@@ -105,7 +99,7 @@ description: "在 Linux 系统上微调一个大模型、部署模型、暴露 A
 	- 大语言模型开山论文：2017 年 Google Brain 团队发布，标志着 **Transformer** 架构的提出，彻底改变了自然语言处理（NLP）领域，标志着大语言模型时代的开始：[Attention Is All You Need](https://arxiv.org/abs/1706.03762)
 - 什么是矩阵的“秩”
 	- 矩阵的秩（Rank of a matrix）是指矩阵中**线性无关**的行或列的最大数量。简单来说它能反映矩阵所包含的**有效信息量**
-- LoRA 如何做到部分参数微调 ![[Pasted image 20250225121007.png]]
+- LoRA 如何做到部分参数微调
 - LoRA 训练结束后通常需要进行权重合并
 ##### 6. 微调常见实现框架
 - [初学者如何对大模型进行微调？](https://www.zhihu.com/question/638803488/answer/84354509523)
@@ -333,12 +327,12 @@ uvicorn main:app --reload --host 0.0.0.0
 ```
 http://localhost:8000/docs
 ```
-![[Pasted image 20250223232930.png]]
+
 - 或者你也可以通过 postMan 来测试
 ```
 http://localhost:8000/generate?prompt=你是谁？
 ```
-![[Pasted image 20250223232958.png]]
+
 ## 六、web后端调用
 ##### 1. pom.xml 导入依赖
 ```xml
