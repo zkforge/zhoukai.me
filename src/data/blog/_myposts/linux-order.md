@@ -1,5 +1,5 @@
 ---
-title: "AI 专业研究生必备的 Linux 命令指南"
+title: "Linux 命令指南大全"
 author: Kai Zhou
 pubDatetime: 2025-06-26T10:00:00.00+08:00
 featured: true
@@ -9,10 +9,10 @@ tags:
   - AI
   - 命令行
   - 工具
-description: "为人工智能专业研究生整理的Linux命令指南，涵盖文件操作、进程管理、网络工具、开发环境配置等实用技能"
+description: "Linux命令指南，涵盖文件操作、进程管理、网络工具、开发环境配置等实用技能"
 ---
 
-> 作为AI专业的研究生，熟练掌握Linux命令行是必备技能。本文整理了从基础到进阶的Linux命令。
+> 本文整理了从基础到进阶的Linux命令，用于查漏补缺。
 
 ## 目录
 
