@@ -77,12 +77,18 @@ sudo service ssh start
 - 获取 WSL2 的 IP 地址：
 
 在 **PowerShell** 中执行以下命令：
-```bash
+```powershell
 wsl hostname -I
 ```
 > 记录输出的 IP 地址，假设为 172.28.112.1。
 
-
+- 设置内部端口转发：
+```powershell
+# 重置
+netsh interface portproxy reset
+# 添加转发
+netsh interface portproxy add v4tov4 listenport=2222 listenaddress=0.0.0.0 connectport=2222 connectaddress=172.20.87.162
+```
 
 ### 1.2.2 在 Windows 上安装 OpenSSH server
 
@@ -116,7 +122,7 @@ Get-Service sshd
 
 ```powershell
 # 允许 2222 端口
-New-NetFirewallRule -Name "OpenSSH-Server" -DisplayName "OpenSSH Server (TCP 22)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 2222
+New-NetFirewallRule -Name "OpenSSH-Server" -DisplayName "OpenSSH Server (TCP 2222)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 2222
 ```
 
 ### 1.2.5 测试 SSH 连接
