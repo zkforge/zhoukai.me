@@ -36,7 +36,7 @@ description: "安装 linux 双系统"
 - [Ubuntu 官方下载页面](https://cn.ubuntu.com/download)
 - [清华大学开源镜像站](https://mirrors.tuna.tsinghua.edu.cn/)
 
-建议下载 Ubuntu 22.04 桌面版本。(amd64,Desktop LiveDVD)
+建议下载 Ubuntu 24.04 桌面版本。(amd64,Desktop LiveDVD)
 
 ### 2.2 下载并安装 UltraISO
 

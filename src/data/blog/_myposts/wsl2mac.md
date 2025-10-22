@@ -66,8 +66,6 @@ sudo service ssh start
 
 
 
-
-
 ### 1.2 Windows 上设置 SSH 与端口转发
 
 > 由于 WSL2 使用虚拟网络，默认情况下无法直接从局域网访问其服务。因此，需要在 Windows 上设置端口转发，将外部请求转发到 WSL2 的 SSH 服务。
@@ -80,14 +78,13 @@ sudo service ssh start
 ```powershell
 wsl hostname -I
 ```
-> 记录输出的 IP 地址，假设为 172.28.112.1。
+> 记录输出的 IP 地址，假设为 120.120.120.120。
 
 - 设置内部端口转发：
 ```powershell
-# 重置
 netsh interface portproxy reset
-# 添加转发
-netsh interface portproxy add v4tov4 listenport=2222 listenaddress=0.0.0.0 connectport=2222 connectaddress=172.20.87.162
+
+netsh interface portproxy add v4tov4 listenport=2222 listenaddress=0.0.0.0 connectport=2222 connectaddress=120.120.120.120
 ```
 
 ### 1.2.2 在 Windows 上安装 OpenSSH server
@@ -100,7 +97,9 @@ Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
 # 安装 OpenSSH 服务器
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+```
 
+```powershell
 # 如果失败，可以改用 DISM 命令
 dism /online /Add-Capability /CapabilityName:OpenSSH.Server~~~~0.0.1.0
 ```
