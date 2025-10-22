@@ -85,9 +85,9 @@ description: "安装 linux 双系统"
 ### 3.2 Ubuntu 安装过程
 
 1. 选择 "Install Ubuntu" 开始安装
-2. 选择语言（推荐选择 English 或 中文简体）
+2. 选择语言（推荐选择中文简体）
 3. 选择安装类型：
-   - 选择"其他选项"进行手动分区
+   - **选择"其他选项"进行手动分区**
    - 不要选择"与 Windows 共存"或"抹除整个磁盘"
 
 ### 3.3 磁盘分区设置
@@ -96,7 +96,7 @@ description: "安装 linux 双系统"
 
 **推荐分区方案：**
 - `/boot` 分区：512MB - 1GB（EFI 分区）
-- `swap` 交换空间：根据内存大小确定
+- `swap` 交换空间：根据内存大小确定，看下表
 - `/` 根分区：至少 20GB
 - `/home` 分区：剩余空间（用于存储个人文件）
 
@@ -143,6 +143,11 @@ bcdedit /set {bootmgr} path \EFI\ubuntu\shimx64.efi
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
 
+### 4.3 安装 ubuntu 时黑屏
+
+1. 显卡驱动问题，更换 ubuntu 版本，例如 40 系显卡不要使用 22.04，更换 24.04
+2. 也可以在 grub 页面选择第二个安装选项（除 try or install ubuntu）或者 按 e 添加参数
+
 ## 其余个人配置记录
 ### 必要资源
 
@@ -152,7 +157,7 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 - 壁纸（[wallpaper](https://github.com/vinceliuice/WhiteSur-wallpapers)）
 - GRUB 启动页面
 - ulauncher
-- 软件与更新 附加驱动 专用驱动 使用 NVIDIA driver metapackage 来自 nvidia-driver-550 (专有, tested)
+- 下载安装 nvidia 显卡驱动
 
 ### 必要插件
 
@@ -173,15 +178,6 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 ```bash
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
-```
-
-- 重设为默认字体
-
-```bash
-gsettings reset org.gnome.desktop.interface font-name
-gsettings reset org.gnome.desktop.interface document-font-name
-gsettings reset org.gnome.desktop.interface monospace-font-name
-gsettings reset org.gnome.desktop.wm.preferences titlebar-font
 ```
 
 > grub 默认启动项修改/etc/default/grub
