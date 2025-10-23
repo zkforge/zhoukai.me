@@ -182,3 +182,5 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 > grub 默认启动项修改/etc/default/grub
 > 修改后必须要 sudo grub-update
+
+> http://47.76.135.200/api/v1/client/subscribe?token=57ce18339271c390eb57ce3af52ec938
