@@ -1,5 +1,5 @@
 ---
-import { getDetailedUptime, startUptimeTimer, stopUptimeTimer, type UptimeInfo } from '../utils/uptimeCounter';
+import { startUptimeTimer, type UptimeInfo } from '../utils/uptimeCounter';
 ---
 
 <div id="uptime-counter" class="text-sm opacity-75">
@@ -8,7 +8,7 @@ import { getDetailedUptime, startUptimeTimer, stopUptimeTimer, type UptimeInfo }
 </div>
 
 <script>
-  import { getDetailedUptime, startUptimeTimer, type UptimeInfo } from '../utils/uptimeCounter.ts';
+  import { startUptimeTimer, type UptimeInfo } from '../utils/uptimeCounter.ts';
 
   let timerId: number | null = null;
 
@@ -53,7 +53,9 @@ import { getDetailedUptime, startUptimeTimer, stopUptimeTimer, type UptimeInfo }
       });
 
       // 添加悬停效果
-      uptimeDisplay.title = `网站已正常运行 ${uptime.totalDays} 天`;
+      timerId = startUptimeTimer((uptime: UptimeInfo) => {
+        uptimeDisplay.title = `网站已正常运行 ${uptime.totalDays} 天`;
+      });
       uptimeDisplay.style.cursor = 'pointer';
       uptimeDisplay.style.transition = 'color 0.3s ease';
     }
@@ -62,7 +64,7 @@ import { getDetailedUptime, startUptimeTimer, stopUptimeTimer, type UptimeInfo }
   // 页面卸载时清理计时器
   window.addEventListener('beforeunload', () => {
     if (timerId !== null) {
-      stopUptimeTimer(timerId);
+      clearInterval(timerId);
     }
   });
 </script>
