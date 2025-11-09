@@ -57,8 +57,4 @@ export default defineConfig({
       }),
     },
   },
-  experimental: {
-    responsiveImages: true,
-    preserveScriptOrder: true,
-  },
-});
+  });
