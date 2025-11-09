@@ -1,0 +1,99 @@
+---
+import { getDetailedUptime, startUptimeTimer, stopUptimeTimer, type UptimeInfo } from '../utils/uptimeCounter';
+---
+
+<div id="uptime-counter" class="text-sm opacity-75">
+  <span>运行时长: </span>
+  <span id="uptime-display" class="font-medium">计算中...</span>
+</div>
+
+<script>
+  import { getDetailedUptime, startUptimeTimer, type UptimeInfo } from '../utils/uptimeCounter.ts';
+
+  let timerId: number | null = null;
+
+  // 格式化运行时长显示
+  function formatUptime(uptime: UptimeInfo): string {
+    // 根据时间长度选择合适的显示格式，始终显示到秒
+    if (uptime.days >= 365) {
+      const years = Math.floor(uptime.days / 365);
+      const remainingDays = uptime.days % 365;
+      return `${years}年${remainingDays}天${uptime.hours}时${uptime.minutes}分${uptime.seconds}秒`;
+    } else if (uptime.days >= 30) {
+      const months = Math.floor(uptime.days / 30);
+      const remainingDays = uptime.days % 30;
+      return `${months}个月${remainingDays}天${uptime.hours}时${uptime.minutes}分${uptime.seconds}秒`;
+    } else if (uptime.days > 0) {
+      return `${uptime.days}天${uptime.hours}时${uptime.minutes}分${uptime.seconds}秒`;
+    } else if (uptime.hours > 0) {
+      return `${uptime.hours}时${uptime.minutes}分${uptime.seconds}秒`;
+    } else if (uptime.minutes > 0) {
+      return `${uptime.minutes}分${uptime.seconds}秒`;
+    } else {
+      return `${uptime.seconds}秒`;
+    }
+  }
+
+  // 页面加载完成后启动计时器
+  document.addEventListener('DOMContentLoaded', () => {
+    const uptimeDisplay = document.getElementById('uptime-display');
+
+    if (uptimeDisplay) {
+      // 启动实时更新
+      timerId = startUptimeTimer((uptime: UptimeInfo) => {
+        uptimeDisplay.textContent = formatUptime(uptime);
+
+        // 添加简单的闪烁效果（可选）
+        if (uptime.seconds === 0) {
+          uptimeDisplay.style.color = 'var(--accent-color, #3b82f6)';
+          setTimeout(() => {
+            uptimeDisplay.style.color = '';
+          }, 300);
+        }
+      });
+
+      // 添加悬停效果
+      uptimeDisplay.title = `网站已正常运行 ${uptime.totalDays} 天`;
+      uptimeDisplay.style.cursor = 'pointer';
+      uptimeDisplay.style.transition = 'color 0.3s ease';
+    }
+  });
+
+  // 页面卸载时清理计时器
+  window.addEventListener('beforeunload', () => {
+    if (timerId !== null) {
+      stopUptimeTimer(timerId);
+    }
+  });
+</script>
+
+<style>
+  #uptime-counter {
+    transition: opacity 0.3s ease;
+  }
+
+  #uptime-counter:hover {
+    opacity: 1 !important;
+  }
+
+  #uptime-display {
+    position: relative;
+  }
+
+  #uptime-display:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none;
+    margin-bottom: 4px;
+  }
+</style>

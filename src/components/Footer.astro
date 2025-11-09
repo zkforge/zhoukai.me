@@ -1,6 +1,7 @@
 ---
 import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
+import UptimeCounter from "./UptimeCounter.astro";
 
 const currentYear = new Date().getFullYear();
 
@@ -21,6 +22,8 @@ const { noMarginTop = false } = Astro.props;
       <span>Copyright &#169; {currentYear}</span>
       <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
       <span>All rights reserved.</span>
+      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
+      <UptimeCounter />
     </div>
   </div>
 </footer>

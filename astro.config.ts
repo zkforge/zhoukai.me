@@ -46,7 +46,7 @@ export default defineConfig({
   image: {
     // Used for all Markdown images; not configurable per-image
     // Used for all `<Image />` and `<Picture />` components unless overridden with a prop
-    experimentalLayout: "constrained",
+    // experimentalLayout: "constrained", // 已移除，因为在新版本中不支持
   },
   env: {
     schema: {
