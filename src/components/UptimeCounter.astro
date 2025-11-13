@@ -34,14 +34,20 @@ import { startUptimeTimer, type UptimeInfo } from '../utils/uptimeCounter';
     }
   }
 
-  // 页面加载完成后启动计时器
-  document.addEventListener('DOMContentLoaded', () => {
+  // 初始化运行时长显示
+  function initUptimeCounter() {
     const uptimeDisplay = document.getElementById('uptime-display');
 
     if (uptimeDisplay) {
+      // 清理之前的计时器
+      if (timerId !== null) {
+        clearInterval(timerId);
+      }
+
       // 启动实时更新
       timerId = startUptimeTimer((uptime: UptimeInfo) => {
         uptimeDisplay.textContent = formatUptime(uptime);
+        uptimeDisplay.title = `网站已正常运行 ${uptime.totalDays} 天`;
 
         // 添加简单的闪烁效果（可选）
         if (uptime.seconds === 0) {
@@ -52,14 +58,24 @@ import { startUptimeTimer, type UptimeInfo } from '../utils/uptimeCounter';
         }
       });
 
-      // 添加悬停效果
-      timerId = startUptimeTimer((uptime: UptimeInfo) => {
-        uptimeDisplay.title = `网站已正常运行 ${uptime.totalDays} 天`;
-      });
       uptimeDisplay.style.cursor = 'pointer';
       uptimeDisplay.style.transition = 'color 0.3s ease';
     }
-  });
+  }
+
+  // 页面加载完成后初始化
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initUptimeCounter);
+  } else {
+    // 如果页面已经加载完成，立即初始化
+    initUptimeCounter();
+  }
+
+  // 监听 Astro 页面导航
+  document.addEventListener('astro:page-load', initUptimeCounter);
+
+  // 监听页面路由变化
+  window.addEventListener('popstate', initUptimeCounter);
 
   // 页面卸载时清理计时器
   window.addEventListener('beforeunload', () => {
