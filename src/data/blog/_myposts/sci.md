@@ -2,7 +2,7 @@
 title: "科研入门与论文研究方法"
 author: Kai Zhou
 pubDatetime: 2025-11-13T10:00:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - 科研

@@ -2,7 +2,7 @@
 title: SSH 连接 WSL 与 Mac
 author: Kai Zhou
 pubDatetime: 2025-07-20T10:00:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - wsl

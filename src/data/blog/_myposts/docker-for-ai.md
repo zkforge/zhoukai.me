@@ -2,7 +2,7 @@
 title: Docker for AI 教程
 author: Kai Zhou
 pubDatetime: 2025-07-01T10:00:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - LLM

@@ -2,7 +2,7 @@
 title: AI Agent 白皮书（Google）中文翻译
 author: Kai Zhou
 pubDatetime: 2025-04-20T10:00:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - LLM

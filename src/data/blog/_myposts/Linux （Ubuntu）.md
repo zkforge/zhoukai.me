@@ -2,7 +2,7 @@
 title: " Linux 双系统安装"
 author: Kai Zhou
 pubDatetime: 2025-10-09T10:00:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - Linux

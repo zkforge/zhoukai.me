@@ -2,7 +2,7 @@
 title: "在 Linux 系统上微调、部署、前端展示大模型"
 author: Kai Zhou
 pubDatetime: 2025-10-15T15:00:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - LLama-Factory

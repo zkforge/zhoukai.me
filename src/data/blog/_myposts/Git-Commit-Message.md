@@ -2,7 +2,7 @@
 title: Git Commit Message 开发规范
 author: Kai Zhou
 pubDatetime: 2025-06-14T20:20:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - Git

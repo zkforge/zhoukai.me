@@ -2,7 +2,7 @@
 title: "Hugging Face 国内镜像源配置指南"
 author: Kai Zhou
 pubDatetime: 2024-05-14T20:10:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - AI

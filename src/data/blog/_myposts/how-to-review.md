@@ -2,7 +2,7 @@
 title: 如何 Review 一篇文章？
 author: Kai Zhou
 pubDatetime: 2025-10-29T20:20:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - Review

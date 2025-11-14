@@ -2,7 +2,7 @@
 title: "大语言模型综述：GPT、LLaMA 和 PaLM 模型的发展"
 author: Kai Zhou
 pubDatetime: 2025-05-28T16:00:00.00+08:00
-featured: true
+featured: false
 draft: false
 tags:
   - LLM
