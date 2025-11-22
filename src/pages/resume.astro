@@ -85,11 +85,20 @@ title: "个人简历"
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 8px 0;
             font-size: 14px;
         }
 
         .contact span {
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: var(--color-text-secondary);
+        }
+
+        .contact span + span::before {
+            content: "｜";
+            margin: 0 12px;
             color: var(--color-text-secondary);
         }
 
@@ -337,9 +346,11 @@ title: "个人简历"
             }
 
             .contact {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
+                gap: 6px 0;
+            }
+
+            .contact span + span::before {
+                margin: 0 8px;
             }
 
             .section-title {
@@ -418,13 +429,10 @@ title: "个人简历"
         <!-- 头部信息 -->
         <header class="header">
             <h1 class="name">周凯</h1>
-            <p class="title">在校研究生</p>
             <nav class="contact">
-                <span>📧 <a href="mailto:kaizhou0305@gmail.com">kaizhou0305@gmail.com</a></span>
-                <span>📱 +86 15995397689</span>
-                <span>💬 微信：zk471104594</span>
-                <span>🌐 <a href="https://xiangkaik.top" target="_blank">Blog</a></span>
-                <span>🔗 <a href="https://github.com/zkforge" target="_blank">GitHub</a></span>
+                <span><a href="mailto:kaizhou0305@gmail.com">kaizhou0305@gmail.com</a></span>
+                <span><a href="https://xiangkaik.top" target="_blank">Blog</a></span>
+                <span><a href="https://github.com/zkforge" target="_blank">GitHub</a></span>
             </nav>
         </header>
 
