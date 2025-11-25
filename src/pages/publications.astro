@@ -1,0 +1,115 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import { SITE } from "@/config";
+
+// --- 真实论文数据 ---
+const publications = [
+  {
+    year: "2025",
+    list: [
+      {
+        title: "A paper that does not exist yet but will in the future",
+        image: "/assets/img/papers_preview/plip.png", 
+        authors: "Kai Zhou",
+        conference: "CVPR 2025", 
+        links: [
+          { name: "arXiv", url: "http://arxiv.org" },
+          { name: "Code", url: "https://github.com" },
+        ]
+      },
+    ]
+  },
+  {
+    year: "2024",
+    list: [
+      {
+        title: "A paper that does not exist yet but will in the future",
+        image: "/assets/img/papers_preview/bisenetv2.png",
+        authors: "Kai Zhou",
+        conference: "IJCV 2024", 
+        links: [
+          { name: "arXiv", url: "http://arxiv.org" },
+          { name: "Code", url: "https://github.com" },
+          { name: "Springer", url: "https://link.springer.com/article" },
+        ]
+      }
+    ]
+  }
+];
+---
+
+<Layout title={`Publications | ${SITE.title}`}>
+  <Header />
+
+  <main id="main-content" class="mx-auto w-full max-w-app flex-1 px-4 py-8">
+    <div class="flex flex-col space-y-12">
+      {publications.map((group) => (
+        <section>
+          <div class="sticky top-0 z-10 bg-skin-fill/90 backdrop-blur-sm py-2 mb-6 border-b border-dashed border-skin-line">
+             <h2 class="text-2xl font-bold text-accent">
+              {group.year}
+            </h2>
+          </div>
+         
+          <ul class="space-y-10">
+            {group.list.map((paper) => (
+              <li class="group flex flex-col gap-6 sm:flex-row items-start">
+                
+                {paper.image && (
+                  <div class="relative shrink-0 w-full sm:w-56 md:w-64 overflow-hidden rounded-lg shadow-sm border border-skin-line/50">
+                    
+                    <span class="absolute top-0 left-0 bg-accent text-white px-2 py-1 text-xs font-bold rounded-tl-lg rounded-br-lg z-10 tracking-wider">
+                      {/* 提取会议名称的第一个单词，作为标签内容 */}
+                      {paper.conference.split(' ')[0]}
+                    </span>
+
+                    <img 
+                      src={paper.image} 
+                      alt={paper.title} 
+                      class="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+
+                {/* --- 内容区域 ... 省略其余内容 --- */}
+                <div class="flex-1 flex flex-col space-y-3">
+                  <h3 class="text-lg font-bold text-skin-base sm:text-xl leading-snug group-hover:text-accent transition-colors">
+                    {paper.title}
+                  </h3>
+                  
+                  <p class="text-sm text-skin-base opacity-90 leading-relaxed">
+                    {paper.authors}
+                  </p>
+
+                  <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-sm mt-1">
+                    <span class="font-semibold italic text-skin-accent px-2 py-0.5 bg-skin-accent/10 rounded">
+                      {paper.conference}
+                    </span>
+                    
+                    <div class="flex gap-3">
+                      {paper.links.map((link) => (
+                        <LinkButton
+                          href={link.url}
+                          className="flex items-center gap-1 text-skin-base opacity-70 hover:opacity-100 hover:text-accent transition-all underline decoration-dashed underline-offset-4"
+                          title={link.name}
+                        >
+                          <span>[{link.name}]</span>
+                        </LinkButton>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
