@@ -8,7 +8,7 @@ tags:
   - LLM
   - Agent
   - AI
-description: 本文为 AI 领域 Docker 必备技术的初学者教程
+description: 本文为 Docker 的初学者教程
 ---
 
 ## 目录
