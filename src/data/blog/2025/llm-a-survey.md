@@ -72,7 +72,7 @@ description: "本文为论文《Large language models: a survey》的阅读笔�
 - 基于模型的指标：IE、QA、NLI、忠诚度分类等。
 - 人工评估：主观判断模型输出的真实性和相关性。
 
-> 例如，更大的模型和较低的 temperature 设置通常表现更好。([Minaee 等, 2025, p. 23](zotero://select/library/items/XRV9E2XQ))
+> 例如，更大的模型和较低的 temperature 设置通常表现更好。
 
 ## 2. 如何使用大模型——提示词工程
 
