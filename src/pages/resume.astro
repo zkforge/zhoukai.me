@@ -1,550 +1,330 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人简历</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-primary: #356fa1;
-            --color-secondary: #2d5d8a;
-            --color-accent: #356fa1;
-            --color-success: #28a745;
-            --color-warning: #ffc107;
-            --color-error: #dc3545;
-            --color-background: #f5f5f5;
-            --color-card-bg: #ffffff;
-            --color-text-primary: #333333;
-            --color-text-secondary: #666666;
-            --color-text-accent: #666666;
-            --color-link: #356fa1;
-            --border-radius: 15px;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-            line-height: 1.75;
-            color: var(--color-text-primary);
-            background: var(--color-background);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 50px 20px;
-            margin: 0;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 800px;
-            background: var(--color-card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            padding: 40px 45px;
-            transition: var(--transition);
-        }
-
-        .container:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        /* 头部样式 */
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-        }
-
-        .name {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: var(--color-text-primary);
-        }
-
-        .title {
-            font-size: 18px;
-            color: var(--color-text-secondary);
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .contact {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px 0;
-            font-size: 14px;
-        }
-
-        .contact span {
-            position: relative;
-            display: flex;
-            align-items: center;
-            color: var(--color-text-secondary);
-        }
-
-        .contact span + span::before {
-            content: "｜";
-            margin: 0 12px;
-            color: var(--color-text-secondary);
-        }
-
-        .contact a {
-            color: var(--color-link);
-            text-decoration: none;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .contact a:hover {
-            color: var(--color-primary);
-            text-decoration: underline;
-        }
-
-        /* 章节样式 */
-        .section {
-            margin-bottom: 35px;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--color-secondary);
-            margin-bottom: 20px;
-        }
-
-        .subsection {
-            margin-bottom: 25px;
-        }
-
-        .subsection-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: var(--color-text-primary);
-            margin-bottom: 8px;
-        }
-
-        .company {
-            color: var(--color-text-secondary);
-            font-weight: 500;
-        }
-
-        .duration {
-            color: var(--color-text-secondary);
-            font-size: 14px;
-            margin-left: 10px;
-        }
-
-        .content {
-            margin-left: 0;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        li:before {
-            content: "▶";
-            position: absolute;
-            left: 0;
-            color: var(--color-text-secondary);
-            font-size: 12px;
-        }
-
-        /* 技能样式 */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            margin-bottom: 20px;
-        }
-
-        .skill-category h4 {
-            font-size: 14px;
-            font-weight: bold;
-            color: var(--color-text-primary);
-            margin-bottom: 10px;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            background: none;
-            color: var(--color-text-secondary);
-            padding: 2px 0;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        /* 教育样式 */
-        .education-item {
-            margin-bottom: 25px;
-        }
-
-        .degree {
-            font-weight: bold;
-            color: var(--color-text-primary);
-            font-size: 16px;
-        }
-
-        .university {
-            color: var(--color-text-secondary);
-            font-weight: 500;
-        }
-
-        .education-duration {
-            color: var(--color-text-secondary);
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        /* 项目样式 */
-        .project-title {
-            font-weight: bold;
-            color: var(--color-text-primary);
-            margin-bottom: 5px;
-            font-size: 16px;
-        }
-
-        .project-tech {
-            color: var(--color-text-secondary);
-            font-size: 13px;
-            font-style: italic;
-            margin-bottom: 8px;
-        }
-
-        /* 语言样式 */
-        .language-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .language-name {
-            font-weight: bold;
-            color: var(--color-text-primary);
-        }
-
-        .language-level {
-            color: var(--color-text-secondary);
-            font-weight: 500;
-        }
-
-        /* 返回按钮样式 */
-        .back-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
-            background: var(--color-card-bg);
-            color: var(--color-primary);
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 500;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            z-index: 1000;
-        }
-
-        .back-button:hover {
-            background: var(--color-primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(53, 111, 161, 0.3);
-        }
-
-        .back-button svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
-
-        /* 调整容器样式为返回按钮留出空间 */
-        .container {
-            width: 100%;
-            max-width: 800px;
-            background: var(--color-card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            padding: 40px 45px;
-            transition: var(--transition);
-            margin-top: 20px;
-        }
-
-        /* 底部样式 */
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            color: var(--color-text-secondary);
-            font-size: 12px;
-        }
-
-        /* 响应式设计 */
-        @media (max-width: 600px) {
-            body {
-                padding: 20px 15px;
-            }
-
-            .container {
-                max-width: 100%;
-                padding: 20px;
-                border-radius: 10px;
-                margin-top: 60px;
-            }
-
-            .back-button {
-                top: 10px;
-                left: 10px;
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-
-            .back-button svg {
-                width: 14px;
-                height: 14px;
-            }
-                  .name {
-                font-size: 28px;
-            }
-
-            .title {
-                font-size: 16px;
-            }
-
-            .contact {
-                gap: 6px 0;
-            }
-
-            .contact span + span::before {
-                margin: 0 8px;
-            }
-
-            .section-title {
-                font-size: 18px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* 打印样式 */
-        @media print {
-            body {
-                background: white;
-                padding: 20px;
-                margin: 0;
-            }
-
-            /* 隐藏返回按钮 */
-            .back-button {
-                display: none;
-            }
-
-            .container {
-                max-width: none;
-                width: 100%;
-                box-shadow: none;
-                border-radius: 0;
-                padding: 20px;
-            }
-
-            .header {
-                margin-bottom: 30px;
-                border-bottom-color: #000;
-            }
-
-            .section {
-                page-break-inside: avoid;
-            }
-
-            .section-title {
-                color: #000;
-                border-bottom-color: #000;
-            }
-
-            .section-title::after {
-                background: #000;
-            }
-
-            a {
-                text-decoration: none;
-                color: #000;
-            }
-
-            .name {
-                color: #000;
-            }
-
-            .company, .university {
-                color: #000;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- 返回主页按钮 -->
-    <a href="/" class="back-button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
-        返回博客
-    </a>
-
-    <div class="container">
-        <!-- 头部信息 -->
-        <header class="header">
-            <h1 class="name">周凯</h1>
-            <nav class="contact">
-                <span><a href="mailto:kaizhou0305@gmail.com">kaizhou0305@gmail.com</a></span>
-                <span><a href="https://zhoukai.space" target="_blank">zhoukai.space</a></span>
-                <span>Tel：15995397689</span>
-                <span>WeChat：zk471104594</span>
-            </nav>
-        </header>
-
-  
-        <!-- 教育经历 -->
-        <section class="section">
-            <h2 class="section-title">教育经历</h2>
-
-            <article class="education-item">
-                <h3 class="degree">吉林大学 · 人工智能专业硕士</h3>
-                <p class="university">吉林/长春</p>
-                <p class="education-duration">2025.09 - 2028.07</p>
-                <div class="content">
-                    <ul>
-                        <li>GPA: 3.4/4.0</li>
-                        <li>院奖学金</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="education-item">
-                <h3 class="degree">南京信息工程大学 · 数据科学与大数据技术本科</h3>
-                <p class="university">江苏/南京</p>
-                <p class="education-duration">2021.09 - 2025.07</p>
-                <div class="content">
-                    <ul>
-                        <li>GPA: 3.4/5.0</li>
-                        <li>校优秀学生干部，国家励志奖学金，校奖学金等</li>
-                    </ul>
-                </div>
-            </article>
-        </section>
-
-        <!-- 项目经历 -->
-        <section class="section">
-            <h2 class="section-title">项目经历</h2>
-
-            <article class="subsection">
-                <h3 class="subsection-title">多模态专利文档智能问答系统</h3>
-                <p class="project-tech">技术栈：Transformers、PyMuPDF、TRL、PEFT、LoRA、Qwen、PyTorch、Datasets、RLHF、vLLM</p>
-                <div class="content">
-                    <ul>
-                        <li><strong>项目简介：</strong>基于阿里云天池竞赛数据集构建的多模态专利文档问答系统，通过检索增强 &amp; 大模型微调实现专利文档的智能理解与精准回答。</li>
-                        <li><strong>多模态数据预处理：</strong>使用 PyMuPDF 将专利 PDF 转换为高分辨率图像（600 DPI），基于 GME 模型提取 3584 维向量表示，构建问题、图像的向量数据库。</li>
-                        <li><strong>智能检索系统：</strong>问题 &amp; 图像的跨模态语义检索，基于余弦相似度精准定位相关文档页面（Top-K=2），根据问题类型动态调整图像输入组合。</li>
-                        <li><strong>模型微调：</strong>构建差异化训练数据集（核心专利问答数据＋少量问题分类辅助数据），缓解模型过拟合风险。基于 Qwen3-VL-32B 多模态大模型，采用 LoRA 技术完成参数高效微调，结合梯度累积、学习率调度策略优化训练流程，显著提升模型在专利问答任务中的响应准确率与鲁棒性。</li>
-                        <li><strong>差异化推理策略：</strong>搭建问题分类模块，精准判别纯图像位置关系 &amp; 推理混合问题类型；定制专属提示词，通过差异化输入引导策略提升初答准确性。</li>
-                        <li><strong>答案优化机制：</strong>设计"初答＋风格迁移"两阶段优化流程，基于 Few-Shot 范式构建风格示例库（检索相似问题答案作为风格参考），通过后处理模块提取核心表达风格，实现答案质量与一致性的双重提升。</li>
-                        <li><strong>性能提升：</strong>通过微调 &amp; 检索优化 &amp; 后处理，BERTScore 的 F1 从 0.6244 提升至 0.8234，EM 从 6.6% 提升至 23.27%，ROUGE-1 的 F1 从 0.2517 提升至 0.5493。</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="subsection">
-                <h3 class="subsection-title">企业知识问答 Agent 系统</h3>
-                <p class="project-tech">技术栈：LangChain、Qwen、FAISS、HuggingFace、Transformers、Gradio</p>
-                <div class="content">
-                    <ul>
-                        <li><strong>项目简介：</strong>独立设计并开发企业文档问答系统，支持上传 PDF，构建向量索引并调用大语言模型回答问题。</li>
-                        <li>使用 LangChain 框架构建 RAG 管线，采用 Qwen-7B-Chat 实现问答生成。</li>
-                        <li>利用 FAISS 进行向量检索，结合 HuggingFace 中文嵌入模型优化搜索准确性。</li>
-                        <li>搭建 FastAPI 接口服务及 Streamlit 前端，支持用户实时上传、提问、查看回答与引用来源。</li>
-                    </ul>
-                </div>
-            </article>
-        </section>
-
-        <!-- 技术技能 -->
-        <section class="section">
-            <h2 class="section-title">技能/证书/竞赛</h2>
-
-            <div class="skills-grid">
-                <article class="skill-category">
-                    <h4>证书</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">CET-4</span>
-                        <span class="skill-tag">CET-6</span>
-                    </div>
-                </article>
-
-                <article class="skill-category">
-                    <h4>语言</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">精通 Python 开发</span>
-                    </div>
-                </article>
-
-                <article class="skill-category">
-                    <h4>技术</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">Transformer</span>
-                        <span class="skill-tag">BERT</span>
-                        <span class="skill-tag">QwenVL</span>
-                        <span class="skill-tag">LoRA 微调</span>
-                        <span class="skill-tag">DPO</span>
-                        <span class="skill-tag">PPO</span>
-                        <span class="skill-tag">GRPO</span>
-                    </div>
-                </article>
-
-                <article class="skill-category">
-                    <h4>应用</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">RAG 检索增强</span>
-                        <span class="skill-tag">Agent 开发</span>
-                        <span class="skill-tag">工具调用</span>
-                    </div>
-                </article>
+---
+// Note: This file is excluded from TypeScript checking in tsconfig.json
+// due to Astro template parsing limitations. Be careful when modifying!
+import Layout from "@/layouts/Layout.astro";
+import BackButton from "@/components/BackButton.astro";
+import { SITE } from "@/config";
+
+// SEO 配置
+const title = `Resume | ${SITE.title}`;
+const description = "Kai Zhou's Resume - 个人简历";
+---
+
+<Layout title={title} description={description}>
+  <div class="resume-container">
+    <BackButton />
+
+    <!-- PDF 容器 -->
+    <div class="pdf-wrapper">
+      <!-- 加载动画 -->
+      <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+        <p>加载简历中...</p>
+      </div>
+
+      <!-- 桌面端：iframe 嵌入 -->
+      <div class="pdf-viewer-desktop">
+        <iframe
+          src="/resume.pdf#view=fitH"
+          class="pdf-iframe"
+          title="Kai Zhou's Resume"
+          onload="this.parentElement.previousElementSibling.style.display='none'"
+        >
+          <!-- 降级方案 -->
+          <object
+            data="/resume.pdf"
+            type="application/pdf"
+            class="pdf-object"
+          >
+            <div class="pdf-fallback">
+              <p class="fallback-text">
+                您的浏览器不支持 PDF 内嵌查看
+              </p>
+              <a href="/resume.pdf" download class="download-button">
+                下载 PDF 简历
+              </a>
             </div>
-        </section>
+          </object>
+        </iframe>
+      </div>
 
-        <!-- 底部 -->
-        <footer class="footer">
-            最后更新: 2025年10月
-        </footer>
+      <!-- 移动端：下载提示 -->
+      <div class="pdf-viewer-mobile">
+        <div class="mobile-prompt">
+          <svg
+            class="pdf-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="18" x2="12" y2="12"></line>
+            <line x1="9" y1="15" x2="15" y2="15"></line>
+          </svg>
+          <h3>查看我的简历</h3>
+          <p class="prompt-text">点击下方按钮查看或下载完整简历</p>
+          <div class="action-buttons">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="primary-button"
+            >
+              在新窗口打开
+            </a>
+            <a href="/resume.pdf" download class="secondary-button">
+              下载 PDF
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-</html>
+  </div>
+</Layout>
+
+<style>
+  /* 容器样式 */
+  .resume-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 56rem; /* max-w-4xl */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* PDF 包装器 */
+  .pdf-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 210 / 297;
+    min-height: 80vh;
+    max-height: 90vh;
+  }
+
+  /* 加载动画 */
+  .loading-spinner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+    z-index: 10;
+  }
+
+  .spinner {
+    width: 3rem;
+    height: 3rem;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 9999px;
+    border-color: var(--muted);
+    border-top-color: var(--accent);
+    animation: spin 1s linear infinite;
+  }
+
+  .loading-spinner p {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--foreground);
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* 桌面端 PDF 查看器 */
+  .pdf-viewer-desktop {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border: 1px solid var(--border);
+  }
+
+  .pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .pdf-object {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* 降级方案 */
+  .pdf-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+    text-align: center;
+    background: var(--background);
+  }
+
+  .fallback-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--foreground);
+  }
+
+  .download-button {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s;
+    background: var(--accent);
+    color: var(--background);
+  }
+
+  .download-button:hover {
+    opacity: 0.9;
+  }
+
+  /* 移动端查看器 */
+  .pdf-viewer-mobile {
+    display: none;
+  }
+
+  .mobile-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    background: var(--background);
+    border: 1px solid var(--border);
+  }
+
+  .pdf-icon {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    opacity: 0.8;
+  }
+
+  .mobile-prompt h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--foreground);
+  }
+
+  .prompt-text {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    color: var(--foreground);
+    opacity: 0.8;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .primary-button {
+    background: var(--accent);
+    color: var(--background);
+  }
+
+  .primary-button:hover {
+    opacity: 0.9;
+  }
+
+  .secondary-button {
+    background: var(--muted);
+    color: var(--foreground);
+  }
+
+  .secondary-button:hover {
+    background: var(--accent);
+    color: var(--background);
+  }
+
+  /* 响应式设计 */
+  @media (max-width: 767px) {
+    .pdf-wrapper {
+      aspect-ratio: auto;
+      min-height: 60vh;
+    }
+
+    .pdf-viewer-desktop {
+      display: none;
+    }
+
+    .pdf-viewer-mobile {
+      display: flex;
+    }
+  }
+
+  /* 打印样式 */
+  @media print {
+    :global(.back-button-container) {
+      display: none !important;
+    }
+
+    .pdf-wrapper {
+      max-width: none;
+      aspect-ratio: auto;
+      max-height: none;
+    }
+
+    .pdf-iframe {
+      height: auto;
+      min-height: 100vh;
+    }
+
+    .loading-spinner {
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  // 设置超时移除加载动画，避免一直显示
+  setTimeout(() => {
+    const spinner = document.getElementById("loading-spinner");
+    if (spinner) {
+      spinner.style.display = "none";
+    }
+  }, 3000);
+</script>
