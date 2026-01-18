@@ -427,38 +427,37 @@
             <h1 class="name">周凯</h1>
             <nav class="contact">
                 <span><a href="mailto:kaizhou0305@gmail.com">kaizhou0305@gmail.com</a></span>
-                <span><a href="https://zhoukai.space" target="_blank">Blog</a></span>
-                <span><a href="https://github.com/zkforge" target="_blank">GitHub</a></span>
+                <span><a href="https://zhoukai.space" target="_blank">zhoukai.space</a></span>
+                <span>Tel：15995397689</span>
+                <span>WeChat：zk471104594</span>
             </nav>
         </header>
 
   
-        <!-- 教育背景 -->
+        <!-- 教育经历 -->
         <section class="section">
-            <h2 class="section-title">教育背景</h2>
+            <h2 class="section-title">教育经历</h2>
 
             <article class="education-item">
-                <h3 class="degree">人工智能 硕士学位</h3>
-                <p class="university">吉林大学</p>
+                <h3 class="degree">吉林大学 · 人工智能专业硕士</h3>
+                <p class="university">吉林/长春</p>
                 <p class="education-duration">2025.09 - 2028.07</p>
                 <div class="content">
                     <ul>
-                        <li>研究方向：深度学习、大模型、多模态生成</li>
-                        <li>相关课程：高级机器学习、深度学习进阶、计算机视觉进阶、人工智能原理</li>
+                        <li>GPA: 3.4/4.0</li>
+                        <li>院奖学金</li>
                     </ul>
                 </div>
             </article>
 
             <article class="education-item">
-                <h3 class="degree">数据科学与大数据技术 学士学位</h3>
-                <p class="university">南京信息工程大学</p>
+                <h3 class="degree">南京信息工程大学 · 数据科学与大数据技术本科</h3>
+                <p class="university">江苏/南京</p>
                 <p class="education-duration">2021.09 - 2025.07</p>
                 <div class="content">
                     <ul>
-                        <li>GPA: 3.4（专业前25%）</li>
-                        <li>荣誉：校优秀学生干部，国家励志奖学金，校奖学金等</li>
-                        <li>主修课程：数据结构与算法、数据库原理、机器学习、大数据处理技术</li>
-                        <li>技能培养：Python编程、统计分析、数据挖掘、深度学习基础</li>
+                        <li>GPA: 3.4/5.0</li>
+                        <li>校优秀学生干部，国家励志奖学金，校奖学金等</li>
                     </ul>
                 </div>
             </article>
@@ -469,63 +468,40 @@
             <h2 class="section-title">项目经历</h2>
 
             <article class="subsection">
-                <h3 class="subsection-title">ChatGPT 风格对话助手微调项目</h3>
+                <h3 class="subsection-title">多模态专利文档智能问答系统</h3>
+                <p class="project-tech">技术栈：Transformers、PyMuPDF、TRL、PEFT、LoRA、Qwen、PyTorch、Datasets、RLHF、vLLM</p>
                 <div class="content">
                     <ul>
-                        <li>独立实现完整RLHF训练流程，涵盖监督微调（SFT）、奖励模型训练（RM）及强化学习微调（PPO）</li>
-                        <li>使用开源中文语言模型 Qwen3-7B，在自构建的中英文对话数据集上进行微调优化</li>
-                        <li>采用 LoRA 轻量参数高效调参方案，提升模型在指令理解、语义连贯性和人类偏好响应上的表现</li>
-                        <li>使用 HuggingFace TRL 库构建 PPO 策略优化流程，基于奖励模型对模型生成质量进行打分训练</li>
-                        <li>项目模块化程度高，具备可扩展性，可适配多种中文开源模型并接入在线部署流程</li>
-                        <li>构建了包含 2k+ 条 prompt-response 样本的对话数据集，覆盖闲聊、问答、任务型指令</li>
-                        <li>对比训练前后模型输出效果，并使用 GPT-4 进行自动偏好评估（可视化评分对比）</li>
-                        <li>项目支持部署至 API 接口或本地 Streamlit Demo，具备工程落地能力</li>
+                        <li><strong>项目简介：</strong>基于阿里云天池竞赛数据集构建的多模态专利文档问答系统，通过检索增强 &amp; 大模型微调实现专利文档的智能理解与精准回答。</li>
+                        <li><strong>多模态数据预处理：</strong>使用 PyMuPDF 将专利 PDF 转换为高分辨率图像（600 DPI），基于 GME 模型提取 3584 维向量表示，构建问题、图像的向量数据库。</li>
+                        <li><strong>智能检索系统：</strong>问题 &amp; 图像的跨模态语义检索，基于余弦相似度精准定位相关文档页面（Top-K=2），根据问题类型动态调整图像输入组合。</li>
+                        <li><strong>模型微调：</strong>构建差异化训练数据集（核心专利问答数据＋少量问题分类辅助数据），缓解模型过拟合风险。基于 Qwen3-VL-32B 多模态大模型，采用 LoRA 技术完成参数高效微调，结合梯度累积、学习率调度策略优化训练流程，显著提升模型在专利问答任务中的响应准确率与鲁棒性。</li>
+                        <li><strong>差异化推理策略：</strong>搭建问题分类模块，精准判别纯图像位置关系 &amp; 推理混合问题类型；定制专属提示词，通过差异化输入引导策略提升初答准确性。</li>
+                        <li><strong>答案优化机制：</strong>设计"初答＋风格迁移"两阶段优化流程，基于 Few-Shot 范式构建风格示例库（检索相似问题答案作为风格参考），通过后处理模块提取核心表达风格，实现答案质量与一致性的双重提升。</li>
+                        <li><strong>性能提升：</strong>通过微调 &amp; 检索优化 &amp; 后处理，BERTScore 的 F1 从 0.6244 提升至 0.8234，EM 从 6.6% 提升至 23.27%，ROUGE-1 的 F1 从 0.2517 提升至 0.5493。</li>
                     </ul>
-                    <p class="project-tech">技术栈：Transformers、TRL (PPOTrainer)、PEFT、LoRA、Qwen、PyTorch、Datasets、RLHF、HuggingFace</p>
                 </div>
             </article>
 
             <article class="subsection">
-                <h3 class="subsection-title">企业知识问答Agent系统</h3>
+                <h3 class="subsection-title">企业知识问答 Agent 系统</h3>
+                <p class="project-tech">技术栈：LangChain、Qwen、FAISS、HuggingFace、Transformers、Gradio</p>
                 <div class="content">
                     <ul>
-                        <li>独立设计并开发企业文档问答系统，支持上传 PDF，构建向量索引并调用大语言模型回答问题</li>
-                        <li>使用 LangChain 框架构建 Retrieval-Augmented Generation (RAG) 管线，采用 Qwen-7B-Chat 实现问答生成</li>
-                        <li>利用 FAISS 进行向量检索，结合 HuggingFace 中文嵌入模型优化搜索准确性</li>
-                        <li>搭建 FastAPI 接口服务及 Streamlit 前端，支持用户实时上传、提问、查看回答与引用来源</li>
-                        <li>项目结构清晰，便于扩展至多模态或多Agent问答系统，具备完整部署能力</li>
+                        <li><strong>项目简介：</strong>独立设计并开发企业文档问答系统，支持上传 PDF，构建向量索引并调用大语言模型回答问题。</li>
+                        <li>使用 LangChain 框架构建 RAG 管线，采用 Qwen-7B-Chat 实现问答生成。</li>
+                        <li>利用 FAISS 进行向量检索，结合 HuggingFace 中文嵌入模型优化搜索准确性。</li>
+                        <li>搭建 FastAPI 接口服务及 Streamlit 前端，支持用户实时上传、提问、查看回答与引用来源。</li>
                     </ul>
-                    <p class="project-tech">技术栈：LangChain、Qwen、FAISS、HuggingFace、PyMuPDF、Streamlit、FastAPI、Transformers</p>
                 </div>
             </article>
         </section>
 
         <!-- 技术技能 -->
         <section class="section">
-            <h2 class="section-title">技术技能</h2>
+            <h2 class="section-title">技能/证书/竞赛</h2>
 
             <div class="skills-grid">
-                <article class="skill-category">
-                    <h4>编程语言</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C++</span>
-                    </div>
-                </article>
-
-                <article class="skill-category">
-                    <h4>开发工具</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Jupyter Notebook</span>
-                        <span class="skill-tag">Google Colab</span>
-                        <span class="skill-tag">Weights & Biases</span>
-                        <span class="skill-tag">SwanLab</span>
-                    </div>
-                </article>
-
                 <article class="skill-category">
                     <h4>证书</h4>
                     <div class="skill-list">
@@ -535,47 +511,32 @@
                 </article>
 
                 <article class="skill-category">
-                    <h4>深度学习</h4>
+                    <h4>语言</h4>
                     <div class="skill-list">
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">精通 Python 开发</span>
                     </div>
                 </article>
 
                 <article class="skill-category">
-                    <h4>数据处理</h4>
+                    <h4>技术</h4>
                     <div class="skill-list">
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Seaborn</span>
-                    </div>
-                </article>
-                <article class="skill-category">
-                    <h4>自然语言处理</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">NLTK</span>
-                        <span class="skill-tag">Transformers</span>
+                        <span class="skill-tag">Transformer</span>
                         <span class="skill-tag">BERT</span>
-                        <span class="skill-tag">GPT</span>
-                        <span class="skill-tag">Qwen</span>
+                        <span class="skill-tag">QwenVL</span>
+                        <span class="skill-tag">LoRA 微调</span>
+                        <span class="skill-tag">DPO</span>
+                        <span class="skill-tag">PPO</span>
+                        <span class="skill-tag">GRPO</span>
                     </div>
                 </article>
-            </div>
-        </section>
 
-        <!-- 语言能力 -->
-        <section class="section">
-            <h2 class="section-title">语言能力</h2>
-            <div class="content">
-                <article class="language-item">
-                    <span class="language-name">中文</span>
-                    <span class="language-level">母语</span>
-                </article>
-                <article class="language-item">
-                    <span class="language-name">英语</span>
-                    <span class="language-level">CET-6</span>
+                <article class="skill-category">
+                    <h4>应用</h4>
+                    <div class="skill-list">
+                        <span class="skill-tag">RAG 检索增强</span>
+                        <span class="skill-tag">Agent 开发</span>
+                        <span class="skill-tag">工具调用</span>
+                    </div>
                 </article>
             </div>
         </section>
