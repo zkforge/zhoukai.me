@@ -47,42 +47,6 @@ const description = "Kai Zhou's Resume - 个人简历";
           </object>
         </iframe>
       </div>
-
-      <!-- 移动端：下载提示 -->
-      <div class="pdf-viewer-mobile">
-        <div class="mobile-prompt">
-          <svg
-            class="pdf-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="12" y1="18" x2="12" y2="12"></line>
-            <line x1="9" y1="15" x2="15" y2="15"></line>
-          </svg>
-          <h3>查看我的简历</h3>
-          <p class="prompt-text">点击下方按钮查看或下载完整简历</p>
-          <div class="action-buttons">
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="primary-button"
-            >
-              在新窗口打开
-            </a>
-            <a href="/resume.pdf" download class="secondary-button">
-              下载 PDF
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </Layout>
@@ -201,98 +165,11 @@ const description = "Kai Zhou's Resume - 个人简历";
     opacity: 0.9;
   }
 
-  /* 移动端查看器 */
-  .pdf-viewer-mobile {
-    display: none;
-  }
-
-  .mobile-prompt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 2rem;
-    text-align: center;
-    border-radius: 0.5rem;
-    background: var(--background);
-    border: 1px solid var(--border);
-  }
-
-  .pdf-icon {
-    width: 4rem;
-    height: 4rem;
-    margin-bottom: 1rem;
-    color: var(--accent);
-    opacity: 0.8;
-  }
-
-  .mobile-prompt h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--foreground);
-  }
-
-  .prompt-text {
-    font-size: 0.875rem;
-    margin-bottom: 1.5rem;
-    color: var(--foreground);
-    opacity: 0.8;
-  }
-
-  .action-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
-    max-width: 20rem;
-  }
-
-  .primary-button,
-  .secondary-button {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    text-align: center;
-    transition: all 0.2s;
-  }
-
-  .primary-button {
-    background: var(--accent);
-    color: var(--background);
-  }
-
-  .primary-button:hover {
-    opacity: 0.9;
-  }
-
-  .secondary-button {
-    background: var(--muted);
-    color: var(--foreground);
-  }
-
-  .secondary-button:hover {
-    background: var(--accent);
-    color: var(--background);
-  }
-
   /* 响应式设计 */
   @media (max-width: 767px) {
     .pdf-wrapper {
       aspect-ratio: auto;
       min-height: 60vh;
-    }
-
-    .pdf-viewer-desktop {
-      display: none;
-    }
-
-    .pdf-viewer-mobile {
-      display: flex;
     }
   }
 
