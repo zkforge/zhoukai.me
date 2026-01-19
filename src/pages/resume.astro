@@ -173,10 +173,10 @@ const description = "Kai Zhou's Resume - 个人简历";
     }
   }
 
-  /* 竖屏模式：增加高度限制 */
+  /* 竖屏模式：明确设置 height */
   @media (max-width: 767px) and (orientation: portrait) {
     .pdf-wrapper {
-      min-height: 90dvh;
+      height: 90dvh;  /* 明确设置高度，覆盖 height: auto */
       max-height: 95dvh;
     }
 
