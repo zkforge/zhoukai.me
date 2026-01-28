@@ -4,6 +4,7 @@ author: Kai Zhou
 pubDatetime: 2026-01-18T23:00:00+08:00
 featured: true
 draft: false
+ogImage: ../../../../assets/images/og/2026/Gemini_Generated_Image_xhz158xhz158xhz1.png
 tags:
   - VS Code
   - 远程开发
@@ -11,6 +12,8 @@ tags:
   - 开发工具
 description: "介绍如何在远程服务器上使用 Codex 插件，通过 SSH 端口转发和 VS Code 代理设置让其连接到本地代理"
 ---
+
+![VS Code Remote Codex](@/assets/images/og/2026/Gemini_Generated_Image_xhz158xhz158xhz1.png)
 
 ## 目录
 
